@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" content="text/html" lang="en">
+<meta name="viewport" content="width=device-width">
+<title>Joe Higgins - 3 layer css</title>
+<style media="screen">
+*, html{
+  margin: 0;
+  padding: 0;
+}
+  body  {
+    background-color: teal;
+  }
+  .nav  {
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    min-width: 100%;
+    height: 5%;
+    background-color: rgba(29, 43, 175, 0.5);
+    padding: 3% 0 0 0;
+    margin: auto;
+
+  }
+  .navbar  { /* needs work  maybe a bootstrap navbar? */
+    width: 1000px;
+    margin: auto;
+  }
+  .parallax {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    /* lower number will make bkgnd smaller */
+    perspective: 300px;
+  }
+  .parallax_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+
+  .slide {border: solid red 1px;
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+  }
+  #slide1 {
+    z-index: 3;
+    background-color: pink;
+    /* background-image: url("images/parisOpera.png");
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  .slide-content  {border: solid green 2px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .top-layer  {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .l-to-r {
+
+    left: 0;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .mid-layer  {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+
+  }
+
+  .background-layer {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+</style>
+
+</head>
+
+<body>
+  <div class="nav">
+    <div class="navbar">
+      <h3>fixed nav bar</h3>
+    </div>
+  </div>
+  <div class="parallax">
+    <div id="slide1" class="slide">
+      <div class="parallax_layer top-layer">
+        <p class="slide-content">TOP LAYER</p>
+        <div class="l-to-r slide-content">
+          <p>move this left to right</p>
+        </div>
+      </div>
+      <div class="parallax_layer mid-layer">
+        <p class="slide-content">MIDDLE LAYER</p>
+      </div>
+      <div class="parallax_layer background-layer">
+        <p class="slide-content">BACKGROUND LAYER</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

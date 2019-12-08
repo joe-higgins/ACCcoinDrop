@@ -1,0 +1,267 @@
+/*
+Simple responsive grid framework by Joe Higgins © 2018
+Mobile first
+Must be imported through
+'style.css' which also imports
+'meyer_reset.css' and
+'normalize_extract.css' and
+'typo.css'
+*/
+
+/* VARIABLES */
+:root {
+  --gen-padding: .1em;
+}
+
+*,*:before, *:after{
+   box-sizing:inherit;
+}
+
+html{
+  /* sets all elements to include padding and border in width/height */
+   box-sizing:border-box;
+}
+
+body, html {
+  width:100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.header  {
+  position: relative;
+  height: 20vh;
+}
+
+.fixed {
+  position: fixed;
+}
+/* ========================================================== */
+/* ============== NAV STYLES ======================== */
+/* ========================================================== */
+/* General */
+.move-down {
+  top: 4rem;
+}
+.nav-sticky {
+  position: fixed;
+  height: 4rem;
+  width: 90%;
+}
+nav li:hover {
+  transition: .7s;
+}
+
+/* HORIZONTAL */
+.nav-horiz {
+  /* position: absolute; */
+  /* top: 200px; */
+  width: 100%;
+}
+.nav-horiz li a{
+  padding: .2em 1em;
+}
+
+.nav-horiz ul {
+  width: 100%;
+  position: relative;
+  /* display: inline-block; */
+}
+
+.nav-horiz ul li {
+  /* width: 25%; 4 col */
+  width: 33%;
+  float: left;
+}
+.nav-horiz ul li a{
+  display: block;
+  padding: 10px 10px;
+}
+.nav-horiz ul ul {
+  display:none;
+  position: absolute;
+  width: 50%;
+  z-index: 999;
+}
+
+.nav-horiz ul ul li {
+  position: relative;
+  float: none;
+}
+.nav-horiz ul ul ul{
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.nav-horiz ul ul ul li {
+  float: none;
+  width: 200%;
+}
+.nav-horiz ul li:hover > ul {
+  display: block;
+}
+
+/* table styles */
+
+.t-row {
+  height: 4rem;
+}
+
+.t-col {
+  width: 50vw;
+  border: solid green 1px;
+}
+/* Vertical (mobile) */
+
+
+/* ==================================== */
+/* =========== GRID STYLES ============ */
+/* ==================================== */
+
+.full-page-wrap {
+  margin: auto;
+  width: 90%;
+  max-width: 1850px;
+}
+
+.grid-wrap  {
+  position: relative;
+  /* float: left; */
+
+}
+
+/* row styling */
+
+.row  {
+  float: left;
+  width: 100%;
+}
+
+/* universal column styling */
+[class*="col-"] {
+  /* border: 1px solid yellow; */
+  float: left;
+  overflow: hidden;
+  /* column width for mobile devices first */
+  width: 100%;
+
+}
+ .eq-height [class*="col-"]{
+   /* Add .eq-height to row class list. Content in columns below
+   will be equal height*/
+   margin-bottom: -100%;
+   padding-bottom: 100%;
+ }
+
+/* gutter  */
+
+/* column widths */
+/* large tablets and above */
+@media only screen and (min-width: 768px){
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-8 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+/* laptops and above */
+@media only screen and (min-width: 1224px){
+  .col-m-1 {width: 8.33%;}
+  .col-m-2 {width: 16.66%;}
+  .col-m-3 {width: 25%;}
+  .col-m-4 {width: 33.33%;}
+  .col-m-5 {width: 41.66%;}
+  .col-m-6 {width: 50%;}
+  .col-m-7 {width: 58.33%;}
+  .col-m-8 {width: 66.66%;}
+  .col-m-9 {width: 75%;}
+  .col-m-10 {width: 83.33%;}
+  .col-m-11 {width: 91.66%;}
+  .col-m-12 {width: 100%;}
+
+  .header  {
+    height: 25vh;
+    transition: .7s;
+  }
+}
+/* desktops */
+@media only screen and (min-width: 1824px){
+  .col-l-1 {width: 8.33%;}
+  .col-l-2 {width: 16.66%;}
+  .col-l-3 {width: 25%;}
+  .col-l-4 {width: 33.33%;}
+  .col-l-5 {width: 41.66%;}
+  .col-l-6 {width: 50%;}
+  .col-l-7 {width: 58.33%;}
+  .col-l-8 {width: 66.66%;}
+  .col-l-9 {width: 75%;}
+  .col-l-10 {width: 83.33%;}
+  .col-l-11 {width: 91.66%;}
+  .col-l-12 {width: 100%;}
+}
+
+/* ====================================== */
+/*        HIGGINS PARALLAX STYLES         */
+/* ====================================== */
+
+/* container for parallaz effect */
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 1px;
+    /* user is "x" pxeis in front of screen*/
+    perspective: 1px;
+  }
+
+  .parallax__layer {border: solid green 4px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 0;
+    bottom: 0;
+    /* won't work without this padding */
+    padding: 100vh 10%;
+  }
+  /* foreground layer */
+  .parallax__layer--base {border: solid yellow 1px;
+    /* positive numeber moves element toward the user */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+/* background layer */
+  .parallax__layer--back {border: solid black 1px;
+    position: relative;
+    /* negative numeber moves element toward away from the user */
+    -webkit-transform: translateZ(-1px) scale(1);
+    transform: translateZ(-1px) scale(1);
+  }
+.title  {border: solid magenta 3px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.parallax__group {border: solid red 5px;
+
+}
+.footer {
+  text-align: center;
+}

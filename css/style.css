@@ -1,0 +1,100 @@
+@import url("meyer_reset.css");
+@import url("normalize_extract.css");
+@import url("layout.css");
+@import url("typo.css");
+
+/* ===== NAME AND DESCRIPTION OF PROJECT HERE  ===== */
+/*
+
+
+*/
+
+/* ================================================= */
+/* add styles specific to a particular project below */
+/* ================================================= */
+
+/* VARIABLES */
+:root {
+  --textcolor: black;
+  --body-bgcolor: #b7bbba;
+  --wrap-bgcolor: white;
+  /* --wrap-bgcolor: rgba(63, 127, 191, 0.35); */
+  --grid-bgcolor: white;
+  /* --grid-bgcolor: rgba(63, 127, 191, 0.2); */
+  --text-hover-color: rgba(255, 204, 102, .8);
+  --active-bgcolor: rgba(75, 73, 123, 1);
+  --link-color: #4b497b;
+  --nav-bgcolor: rgba(192,192,192,0.6);
+  --nav-border: grey;
+
+}
+
+body {
+  color: var(--textcolor);
+  background-color: var(--body-bgcolor);
+}
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--text-hover-color);
+}
+
+a:visited {
+
+}
+a:active {
+  /* background-color: var(--active-bgcolor); */
+}
+.centered {
+  text-align: center;
+}
+.header {
+  background: center / cover no-repeat url("../images/logo.jpg");
+  height: 200px;
+}
+.drop-num {
+  color: red;
+}
+/* ========================================================== */
+/* ============== NAV STYLES ======================== */
+/* ========================================================== */
+/* General */
+nav  {
+  background-color: var(--nav-bgcolor);
+
+}
+nav li a:hover {
+  background-color: var(--active-bgcolor);
+  transition: .7s;
+}
+
+/* ==================================== */
+/* =========== GRID STYLES ============ */
+/* ==================================== */
+
+.full-page-wrap {
+  background-color: var(--wrap-bgcolor);
+
+}
+
+.grid-wrap  {
+  background-color: var(--grid-bgcolor);
+}
+#drop-title {
+  float: left;
+}
+#date {
+  margin-right: 2rem;
+  float: right;
+  font-size: 1rem;
+  font-style: italic;
+}
+#chart-iframe {
+  /* position:absolute; */
+    left: 0px;
+    width: 90vw;
+    top: 0px;
+    height: 100vh;
+}

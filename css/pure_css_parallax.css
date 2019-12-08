@@ -1,0 +1,48 @@
+* {
+  margin:0;
+  padding:0;
+}
+/* container for parallaz effect */
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 1px;
+    /* user is "x" pxeis in front of screen*/
+    perspective: 1px;
+  }
+
+  .parallax__layer {border: solid green 4px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 0;
+    bottom: 0;
+    /* won't work without this padding */
+    padding: 100vh 10%;
+  }
+  /* foreground layer */
+  .parallax__layer--base {border: solid yellow 1px;
+    /* positive numeber moves element toward the user */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+/* background layer */
+  .parallax__layer--back {border: solid black 1px;
+    position: relative;
+    /* negative numeber moves element toward away from the user */
+    -webkit-transform: translateZ(-1px) scale(1);
+    transform: translateZ(-1px) scale(1);
+  }
+.title  {border: solid magenta 3px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+.parallax__group {border: solid red 5px;
+
+}

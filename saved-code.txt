@@ -1,0 +1,113 @@
+.drop-btn {
+
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 999;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav  {
+
+}
+.nav-horiz ul, .nav-horiz li{
+  float: left;
+  overflow: hidden;
+}
+.nav-horiz li {
+
+}
+.nav-horiz li a, .drop-btn {
+  display: inline-block;
+  transition: .5s;
+}
+.nav-horiz ul li.dropdown {
+  position: relative;
+}
+.nav-horiz ul ul.dropdown-content {
+  display: none;
+  position: absolute;
+}
+.nav-horiz ul li.dropdown:hover, .dropdown-content {
+  display: block;
+}
+
+
+
+<ul>
+  <li><a href="#">item 1</a></li>
+  <li><a href="#">item 2</a></li>
+  <li class="dropdown">
+    <a href="#" class="drop-btn">item 3</a>
+    <ul class="dropdown-content">
+      <li><a href="#">sub item 1</a></li>
+      <li><a href="#">sub item 2</a>
+        <ul class="dropdown-content">
+          <li><a href="#">sub sub item 1</a></li>
+          <li><a href="#">sub sub item 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#">item 4</a></li>
+</ul>

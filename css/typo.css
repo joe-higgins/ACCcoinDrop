@@ -1,0 +1,61 @@
+/* VARIABLES */
+
+html {
+  font-size: 62.5%;
+}
+body  {
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 1.4em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 1rem 1.6rem;
+  /* margin-bottom: 1rem; */
+  line-height: 6.2rem;
+
+}
+
+a {
+  text-decoration: none;
+  transition: color .7s ease;
+  -webkit-transition: color .7s ease;
+}
+
+/* from w3.css Are em's or rem's better?*/
+p {
+  font-size: 1.2em;
+  line-height: 1.4rem
+}
+h1 {
+    font-size: 3.6em;
+}
+h2 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 2.4em;
+}
+h4 {
+    font-size: 2em;
+}
+h5 {
+    font-size: 1.8em;
+}
+h6 {
+    font-size: 1.6em;
+}
+ul {
+  font-size: 1.4rem;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: .5s;
+}
+
+a:visited {
+
+}
